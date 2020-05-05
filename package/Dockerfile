@@ -1,10 +1,11 @@
+#
+# Dockerfile for the cron runner container
+#
+
 FROM alpine:3.11
 
 # Add necessary packages
 RUN apk --update add bash tzdata ca-certificates curl
-
-# Create the run user and group
-RUN addgroup --gid 18570 sse && adduser --uid 1984 docker -G sse -D
 
 # set the timezone appropriatly
 ENV TZ=UTC
@@ -17,14 +18,12 @@ WORKDIR $APP_HOME
 # install the app
 COPY . $APP_HOME
 
-# Update permissions
-RUN chown -R docker $APP_HOME && chgrp -R sse $APP_HOME
-
-# Specify the user
-USER docker
-
 # define startup script
 CMD scripts/entry.ksh
 
 # move in the profile
 COPY data/container_bash_profile /home/docker/.profile
+
+#
+# end of file
+#
