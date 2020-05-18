@@ -5,7 +5,7 @@
 FROM alpine:3.11
 
 # Add necessary packages
-RUN apk --update add bash tzdata ca-certificates curl mariadb-client postgresql-client
+RUN apk --update add bash tzdata ca-certificates curl mariadb-client postgresql-client sed gawk jq
 
 # set the timezone appropriatly
 ENV TZ=UTC
