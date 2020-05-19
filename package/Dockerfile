@@ -8,8 +8,8 @@ FROM alpine:3.11
 RUN apk --update add bash tzdata ca-certificates curl mariadb-client postgresql-client sed gawk jq
 
 # set the timezone appropriatly
-ENV TZ=UTC
-RUN cp /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
+ENV TZ=America/New_York
+RUN cp /usr/share/zoneinfo/US/Eastern /etc/localtime && echo $TZ > /etc/timezone
 
 # Specify home 
 ENV APP_HOME /scheduled-action
