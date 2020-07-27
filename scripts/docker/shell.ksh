@@ -3,8 +3,14 @@
 #   exit 1
 #fi
 
+if [ -z "$DOCKER_HOST" ]; then
+   DOCKER_TOOL=docker
+else
+   DOCKER_TOOL=docker-17.04.0
+fi
+
 # set the definitions
 INSTANCE=scheduled-action
 NAMESPACE=uvadave
 
-docker run -ti $NAMESPACE/$INSTANCE /bin/bash -l
+$DOCKER_TOOL run -ti $NAMESPACE/$INSTANCE /bin/bash -l
