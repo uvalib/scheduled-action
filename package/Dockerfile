@@ -2,10 +2,10 @@
 # Dockerfile for the cron runner container
 #
 
-FROM alpine:3.11
+FROM alpine:3.12
 
 # Add necessary packages
-RUN apk --update add bash tzdata ca-certificates curl mariadb-client postgresql-client sed gawk jq
+RUN apk --update add bash tzdata ca-certificates curl mariadb-client postgresql-client sed gawk jq openjdk11 aws-cli
 
 # set the timezone appropriatly
 ENV TZ=America/New_York
