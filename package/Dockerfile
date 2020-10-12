@@ -5,7 +5,7 @@
 FROM alpine:3.12
 
 # Add necessary packages
-RUN apk --update add bash tzdata ca-certificates curl mariadb-client postgresql-client sed gawk jq openjdk11 maven aws-cli libxml2-utils docker-cli make
+RUN apk --update add bash tzdata ca-certificates curl mariadb-client postgresql-client sed gawk jq openjdk11 maven aws-cli libxml2-utils docker-cli make git
 
 # set the timezone appropriatly
 ENV TZ=America/New_York
