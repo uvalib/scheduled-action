@@ -2,7 +2,7 @@
 # Dockerfile for the cron runner container
 #
 
-FROM alpine:3.12
+FROM alpine:3.13
 
 # Add necessary packages
 RUN apk --update add bash tzdata ca-certificates curl mariadb-client postgresql-client sed gawk jq openjdk11 maven aws-cli libxml2-utils docker-cli make git coreutils apache-ant
