@@ -5,7 +5,7 @@
 FROM alpine:3.13
 
 # Add necessary packages
-RUN apk --update add bash tzdata ca-certificates curl mariadb-client postgresql-client sed gawk jq openjdk11 maven aws-cli libxml2-utils docker-cli make git coreutils apache-ant file
+RUN apk --update add bash tzdata ca-certificates curl mariadb-client postgresql-client sed gawk jq openjdk11 maven aws-cli libxml2-utils docker-cli make git coreutils apache-ant file diffutils
 
 # install Phantom.js (see: https://gist.github.com/vovimayhem/6437c2f03b654e392ccf3e9903eba6af)
 RUN cd /tmp && curl -Ls https://github.com/dustinblackman/phantomized/releases/download/2.1.1/dockerized-phantomjs.tar.gz | tar xz && \
