@@ -1,14 +1,10 @@
 #
 # Dockerfile for the cron runner container
 #
-
-FROM public.ecr.aws/docker/library/alpine:3.16
+FROM public.ecr.aws/docker/library/alpine:3.17
 
 # Add necessary packages
 RUN apk update && apk upgrade && apk add bash tzdata ca-certificates curl mariadb-client postgresql-client sed gawk jq openjdk11 maven aws-cli libxml2-utils docker-cli make git coreutils apache-ant file diffutils
-
-# Create python symlink
-RUN ln -s /usr/bin/python3 /usr/bin/python
 
 # set the timezone appropriatly
 ENV TZ=America/New_York
