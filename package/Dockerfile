@@ -1,7 +1,7 @@
 #
 # Dockerfile for the cron runner container
 #
-FROM public.ecr.aws/docker/library/alpine:3.17
+FROM public.ecr.aws/docker/library/alpine:3.18
 
 # Add necessary packages
 RUN apk update && apk upgrade && apk add bash tzdata ca-certificates curl mariadb-client postgresql-client sed gawk jq openjdk11 maven aws-cli libxml2-utils docker-cli make git coreutils apache-ant file diffutils
