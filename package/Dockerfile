@@ -1,10 +1,10 @@
 #
 # Dockerfile for the cron runner container
 #
-FROM public.ecr.aws/docker/library/alpine:3.20
+FROM public.ecr.aws/docker/library/alpine:3.23
 
 # Add necessary packages
-RUN apk update && apk upgrade && apk add bash tzdata ca-certificates curl mariadb-client postgresql-client sed gawk jq openjdk11 maven aws-cli libxml2-utils docker-cli make git coreutils apache-ant file diffutils
+RUN apk update && apk upgrade && apk add bash tzdata ca-certificates curl mariadb-client postgresql-client sed gawk jq openjdk11 maven aws-cli libxml2-utils docker-cli make git coreutils apache-ant file diffutils mariadb-connector-c
 
 # set the timezone appropriatly
 ENV TZ=America/New_York
