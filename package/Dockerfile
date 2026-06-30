@@ -18,7 +18,7 @@ WORKDIR $APP_HOME
 COPY . $APP_HOME
 
 # define startup script
-CMD ["scripts/entry.sh"]
+CMD ["scripts/entry.ksh"]
 
 # move in the profile
 COPY data/container_bash_profile /root/.profile
